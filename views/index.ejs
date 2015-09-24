@@ -10,6 +10,16 @@
 
     <p><%= name %></p>
 
+    <p><%= points%></p> <!--use local variable assigned in apps.js -->
+
+    <h3><%= videodata.categoryName %></h3>
+
+    <ul>
+        <% videodata.categories.forEach(function(item){ %>
+           <li><%= item.categoryName %></li>
+        <% }); %>
+    </ul>
+
     <ul>
       <% for(var i=0;i<5;i++){ %>
         <li>tuna</li>
