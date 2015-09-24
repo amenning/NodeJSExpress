@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var EJS_19 = require('./routes/index_EJS_19');
+var about = require('./routes/about');
 
 var app = express();
 
@@ -21,8 +22,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes); //home directory
-app.use('/index_EJS_19', EJS_19); //home directory
+app.use('/', routes); //home page
+app.use('/index_EJS_19', EJS_19); //home page from lesson 19
+app.use('/about', about); //about page
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
